@@ -1,0 +1,1 @@
+(()=>{var o;console.log("Hola a todos😃"),(o=console).log.apply(o,[1,2,3])})();

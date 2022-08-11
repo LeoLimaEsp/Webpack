@@ -1,0 +1,25 @@
+1. Intalación de dependencias.
+2. npm Init 
+3. Se crea package.json
+4. Webpack se crea como dependencia de desarrollo y se utiliza solo para el desarrollo antes de la liberación.
+5. npm i -D (se indica con la D que es una dependencia de desarrollo)
+6. Se creo en package.json el apartado: devDependencies.
+7. En package.json, en la parte de los scripts se establece: build : webpack.
+8. En la raiz de los archivos crear carpeta src y dentro un archivo: index.js
+9. En el package.json, en en objeto en "main" colocar la ruta exacta del index con src.
+10. Se corre con npm run build y se crea carpeta "dist", el "mode" no se a configurado.
+index.js (Punto de entrada) ----------------------------> main.json(Punto de salida)
+11. Del paso 7, se agrega una bandera: "build": "webpack --mode production" y una llamada: "dev": webpack --mode production", (dev = modo development) y asi se configura el mode.
+12. Se coloca npm run dev y salen unas "cosillas" en main.js, esto es porque con dev se crean comentarios y pesa un poco menos que con build, build es ya para empaquetar y subir de forma final.
+13. El archivo de configuración es el package.json.
+14. Se pueden cabiar los puntos de entrada y salida del paso 10.
+15. Dentro de scripts se ingresa la entrada y salida de la siguiente forma:
+"dev-foo": "webpack --mode development --entry ./foo/src/index.js --output-path./foo/dist", donde se indica la ruta de entrada y salida.
+16. ya se ingresa en la terminal npm run dev--foo o npm run build--foo.
+
+17. USO DE BABEL para transpilar, de una versión nueva o reciente a una mas antigua.
+18. Se descarga: npm i -D babel-loader @babel/core @babel/preset-env
+19. Se crea archivo .babelrc
+20. Se crea archivo de configuración webpack.config.js y se introduce module, rules y loader de babel
+21. En archivo js se introduce codigo muy reciente para ser transpilado por babel
+22. Se corre en terminal npm run build o dev para la transpilacion y se verifica en main.js de dist.
